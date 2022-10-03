@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-light-gray text-light-grayish-blue-400 dark:text-dark-grayish-blue-200 dark:bg-dark-blue transition-colors;
+  }
+  
+  input {
+    background-color: transparent;
+    @apply block leading-none focus:outline-none;
+  }
+}
+
+@layer utilities {
+  .wrapper {
+    @apply mx-auto max-w-md px-5 lg:px-0 lg:max-w-xl;
+  }
+
+  .bg-checked {
+    @apply bg-gradient-to-br from-primary-cyan to-primary-purple;
+  }
+
+  .bg-utils {
+    @apply bg-center bg-cover;
+  }
+
+  .header-bg-mobile-light {
+    background-image: url(./images/bg-mobile-light.jpg);
+    @apply bg-utils;
+  }
+
+  .header-bg-mobile-dark {
+    background-image: url(./images/bg-mobile-dark.jpg);
+    @apply bg-utils;
+  }
+
+  .header-bg-desktop-light {
+    background-image: url(./images/bg-desktop-light.jpg);
+    @apply bg-utils;
+  }
+
+  .header-bg-desktop-dark {
+    background-image: url(./images/bg-desktop-dark.jpg);
+    @apply bg-utils;
+  }
+}
+
+@layer components {
+  .header {
+    @apply h-[220px] lg:h-[300px] 
+           py-10 pb-14 lg:py-20 lg:pb-24
+           header-bg-mobile-light dark:header-bg-mobile-dark
+           md:header-bg-desktop-light md:dark:header-bg-desktop-dark ;
+  }
+}
+
